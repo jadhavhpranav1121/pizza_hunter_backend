@@ -4,7 +4,6 @@
   "description": "[![Twitter Follow](https://img.shields.io/twitter/follow/codeSTACKr?color=1DA1F2&logo=twitter&style=for-the-badge)](https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgithub.com%2FcodeSTACKr&screen_name=codeSTACKr)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
   "engines": {
@@ -17,6 +16,7 @@
     "authy": "^1.4.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "codelyzer": "^6.0.2",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
@@ -27,7 +27,9 @@
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "tslint": "^6.1.3",
     "twilio": "^3.67.0",
+    "typescript": "^4.6.4",
     "validator": "^13.6.0"
   },
   "browser": {
