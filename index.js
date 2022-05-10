@@ -22,7 +22,7 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Credentials", true);
     next();
 });
-app.use(cors({ origin: 'http://localhost:4200' }))
+app.use(cors({ origin: 'https://jadhavhpranav1121.github.io' }))
 app.use(adminRouter);
 app.use(customerRouter);
 app.use(itemsRouter);
