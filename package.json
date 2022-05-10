@@ -1,0 +1,45 @@
+{
+  "name": "pizza_hunter_backend",
+  "version": "1.0.0",
+  "description": "[![Twitter Follow](https://img.shields.io/twitter/follow/codeSTACKr?color=1DA1F2&logo=twitter&style=for-the-badge)](https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgithub.com%2FcodeSTACKr&screen_name=codeSTACKr)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "14.17.4"
+  },
+  "keywords": [],
+  "author": "Pranav Jadhav",
+  "license": "ISC",
+  "dependencies": {
+    "authy": "^1.4.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-simple": "^0.5.6",
+    "mongoose": "^5.13.2",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "twilio": "^3.67.0",
+    "validator": "^13.6.0"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false,
+    "crypto": false,
+    "stream": false,
+    "http": false,
+    "tls": false,
+    "zlib": false,
+    "https": false,
+    "net": false
+  },
+  "devDependencies": {}
+}
