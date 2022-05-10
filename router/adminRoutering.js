@@ -46,9 +46,15 @@ router.post('/admin/auth', async(req, res) => {
     });
 })
 router.get("/admin", async(req, res) => {
-    const newdata = await admin.find();
+    try{
+        const newdata = await admin.find();
+        res.send(newdata);
+    }
+    catch(err){
+        throw err;
+    }
     // console.log(newdata);
-    res.send(newdata);
+   
 })
 router.get("/admin/auth/:email", async(req, res) => {
     const email = req.params.email;
