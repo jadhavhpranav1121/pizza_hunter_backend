@@ -17,7 +17,7 @@ app.use(cookieParser());
 app.use(express.json({ limit: "300mb" }));
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "https://localhost:4200/");
-    res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+    res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT,PATCH");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
     res.header("Access-Control-Allow-Credentials", true);
     next();
