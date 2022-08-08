@@ -7,7 +7,6 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const customer = require("../models/customer");
 const orders = require("../models/customerOrder")
-const { consoleTestResultHandler } = require("tslint/lib/test");
 const app = express();
 app.use(cookieParser());
 const router = new express.Router();
@@ -168,7 +167,7 @@ router.get("/customer", async(req, res) => {
     // console.log(newdata);
     res.send(newdata);
 })
-router.patch("/customer/:email", verifyToken, async(req, res) => {
+router.patch("/customer/:email", async(req, res) => {
     const email = req.params.email;
     const newdata = await customer.updateOne({ email }, req.body);
     res.send(newdata);

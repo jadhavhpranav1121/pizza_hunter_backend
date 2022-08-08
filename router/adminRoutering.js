@@ -6,15 +6,22 @@ const app = express();
 const router = new express.Router();
 router.post("/admin", async(req, res) => {
     try {
-        const newadmin = await new admin(req.body)
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(req.body.Pass, salt);
+        req.body.Pass = hashedPassword;
+        const newadmin = await new admin(req.body) 
         console.log("Data" + newadmin);
-        newadmin.save().then(() => {
-            res.status(201).send(newadmin);
-            console.log('catched');
-        }).catch((e) => {
-            console.log(e);
-            res.status(404).send(e);
-        })
+        newadmin.save((error, registeredUser) => {
+            if (error) {
+                console.log(error);
+            } else {
+                let payload = { subject: registeredUser._id };
+                let token = jwt.sign(payload, 'secretKey');
+                console.log(token);
+                res.status(200).send({ token });
+                console.log('catched');
+            }
+        });
     } catch (e) {
         console.log(e);
     }
@@ -32,15 +39,15 @@ router.post('/admin/auth', async(req, res) => {
             if (!user) {
                 res.status(401).send('invalid email');
             } else {
-                // console.log(userData.password, user.Pass);
-                // const isMatch = await bcrypt.compare(userData.password, user.Pass);
-                // if (isMatch == false) {
-                //     res.status(401).send('Invalid Password')
-                // } else {
-                //     let payload = { subject: user._id };
-                //     let token = jwt.sign(payload, 'secretKey');
-                //     res.status(200).send({ token });
-                // }
+                console.log(userData.password, user.Pass);
+                const isMatch = await bcrypt.compare(userData.password, user.Pass);
+                if (isMatch == false) {
+                    res.status(401).send('Invalid Password')
+                } else {
+                    let payload = { subject: user._id };
+                    let token = jwt.sign(payload, 'secretKey');
+                    res.status(200).send({ token });
+                }
             }
         }
     });
