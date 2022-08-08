@@ -16,13 +16,13 @@ const app = express();
 app.use(cookieParser());
 app.use(express.json({ limit: "300mb" }));
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "https://jadhavhpranav1121.github.io/pizza-hunter");
+    res.header("Access-Control-Allow-Origin", "https://jadhavhpranav1121.github.io");
     res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT,PATCH");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
     res.header("Access-Control-Allow-Credentials", true);
     next();
 });
-app.use(cors({ origin: 'https://jadhavhpranav1121.github.io/pizza-hunter' }))
+app.use(cors({ origin: 'https://jadhavhpranav1121.github.io' }))
 app.use(adminRouter);
 app.use(customerRouter);
 app.use(itemsRouter);
