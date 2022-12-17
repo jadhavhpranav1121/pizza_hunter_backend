@@ -21,8 +21,8 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
     res.header("Access-Control-Allow-Credentials", true);
     next();
-});
-app.use(cors({ origin: 'https://pizza-hunter.onrender.com' }))
+}); 
+app.use(cors({ origin: 'https://pizza-hunter.onrender.com'  }))
 app.use(adminRouter);
 app.use(customerRouter);
 app.use(itemsRouter);
